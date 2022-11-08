@@ -14,7 +14,7 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52 text-xl">
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/services'}>Services</Link></li>
-                        <li><Link to={''}>Blogs</Link></li>
+                        <li><Link to={'/blogs'}>Blogs</Link></li>
 
                         {
                             user?.email ? <>
@@ -28,13 +28,13 @@ const Header = () => {
                         }
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-5xl">T-Travel</Link>
+                <Link className="btn btn-ghost normal-case text-4xl">T-Travel</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 text-xl">
-                    <li><Link>Home</Link></li>
+                    <li><Link to={'/'}>Home</Link></li>
                     <li><Link to={'/services'}>Services</Link></li>
-                    <li><Link>Blogs</Link></li>
+                    <li><Link to={'/blogs'}>Blogs</Link></li>
                     {
                         user?.email ? <>
                             <li><Link to={''}>My reviews</Link></li>
