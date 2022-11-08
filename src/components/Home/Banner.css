@@ -1,3 +1,9 @@
 .bannerImg {
     background-image: url(../../image/banner.jpg);
+    border-radius: 10px;
+}
+
+.bannerText {
+    border-radius: 10px;
+
 }
