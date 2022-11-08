@@ -25,7 +25,7 @@ const HomeService = () => {
                     }
 
                 </div>
-                <Link to={'/services'}><button className="btn btn-outline btn-error">See more</button></Link>
+                <Link to={'/allServices'}><button className="btn btn-outline btn-error">See more</button></Link>
             </div>
         </div>
     );
