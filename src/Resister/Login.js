@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 import googleLogo from '../image/google.png'
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext)
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password)
+
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                alert('login successSully')
+                form.reset();
+            })
+
+
+    }
+
+
+
+
+
     return (
         <div className='container'>
             <div className="hero w-full my-20">
@@ -21,9 +47,7 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-error" type="submit" value="Login" />
