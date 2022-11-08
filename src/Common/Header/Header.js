@@ -3,8 +3,18 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
     // console.log(user)
+
+    const handlelogout = () => {
+        logOutUser()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+
+
+
     return (
         <div className="navbar text-black bg-rose-100 font-bold py-10 px-5">
             <div className="navbar-start">
@@ -22,10 +32,11 @@ const Header = () => {
                             user?.email ? <>
                                 <li><Link to={''}>My reviews</Link></li>
                                 <li><Link to={''}>Add service</Link></li>
-                                <li><Link to={''}>Logout</Link></li>
+                                <li><Link onClick={handlelogout}>Logout</Link></li>
                             </> :
                                 <>
-                                    <li><Link to={'/login'}>login</Link></li>
+                                    <li><Link to={'/login'}>Login</Link></li>
+                                    <li><Link to={'/signUp'}>Sign up</Link></li>
                                 </>
                         }
                     </ul>
@@ -42,7 +53,7 @@ const Header = () => {
                         user?.email ? <>
                             <li><Link to={''}>My reviews</Link></li>
                             <li><Link to={''}>Add service</Link></li>
-                            <li><Link to={''}>Logout</Link></li>
+                            <li><Link onClick={handlelogout}>Logout</Link></li>
                         </> :
                             <>
                                 <li><Link to={'/login'}>Login</Link></li>
