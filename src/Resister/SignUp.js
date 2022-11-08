@@ -36,12 +36,7 @@ const SignUp = () => {
                     <div className='text-center'>
                         <h2 className='pb-4 text-xl'>SignUp with</h2>
                         <div className='flex justify-around py-4'>
-                            {/* <Link className='text-3xl'><FaGoogle></FaGoogle></Link>
-                            <Link className='text-3xl'><FaGithub></FaGithub></Link>
-                            <Link className='text-3xl'><FaFacebook></FaFacebook></Link> */}
                             <Link ><img className='w-8 h-8' src={googlelogo} alt="" /></Link>
-
-
                         </div>
                     </div>
                     <p className='text-center'>Already have an Account <Link className='text-orange-500 font-bold' to={'/login'}>Login</Link></p>
