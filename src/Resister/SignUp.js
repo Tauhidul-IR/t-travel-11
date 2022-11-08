@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import googlelogo from '../image/google.png'
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, googleSignIn } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,6 +23,12 @@ const SignUp = () => {
                 form.reset();
             })
             .catch(eror => console.error(eror))
+    }
+
+    const handleGoogle = () => {
+        googleSignIn()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
 
@@ -62,7 +68,7 @@ const SignUp = () => {
                     <div className='text-center'>
                         <h2 className='pb-4 text-xl'>SignUp with</h2>
                         <div className='flex justify-around py-4'>
-                            <Link ><img className='w-8 h-8' src={googlelogo} alt="" /></Link>
+                            <Link ><img onClick={handleGoogle} className='w-8 h-8' src={googlelogo} alt="" /></Link>
                         </div>
                     </div>
                     <p className='text-center'>Already have an Account <Link className='text-orange-500 font-bold' to={'/login'}>Login</Link></p>

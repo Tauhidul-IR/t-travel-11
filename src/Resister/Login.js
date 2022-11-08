@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import googleLogo from '../image/google.png'
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, googleSignIn } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,6 +23,12 @@ const Login = () => {
             })
 
 
+    }
+
+    const handleGoogle = () => {
+        googleSignIn()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
 
@@ -59,7 +65,7 @@ const Login = () => {
                             {/* <Link className='text-3xl'><FaGoogle></FaGoogle></Link>
                             <Link className='text-3xl'><FaGithub></FaGithub></Link>
                             <Link className='text-3xl'><FaFacebook></FaFacebook></Link> */}
-                            <Link ><img className='w-8 h-8' src={googleLogo} alt="" /></Link>
+                            <Link ><img onClick={handleGoogle} className='w-8 h-8' src={googleLogo} alt="" /></Link>
 
 
                         </div>
