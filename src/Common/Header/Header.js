@@ -25,7 +25,7 @@ const Header = () => {
                                 <li><Link to={''}>Logout</Link></li>
                             </> :
                                 <>
-                                    <li><Link to={''}>Logout</Link></li>
+                                    <li><Link to={'/login'}>login</Link></li>
                                 </>
                         }
                     </ul>
@@ -38,8 +38,6 @@ const Header = () => {
                     <li><Link to={'/services'}>Services</Link></li>
                     <li><Link to={'/blogs'}>Blogs</Link></li>
                     <li><Link to={'/singleService'}>single</Link></li>
-                    <li><Link to={'/login'}>login</Link></li>
-                    <li><Link to={'/signUp'}>signup</Link></li>
                     {
                         user?.email ? <>
                             <li><Link to={''}>My reviews</Link></li>
@@ -47,7 +45,8 @@ const Header = () => {
                             <li><Link to={''}>Logout</Link></li>
                         </> :
                             <>
-                                <li><Link to={''}>Logout</Link></li>
+                                <li><Link to={'/login'}>Login</Link></li>
+                                <li><Link to={'/signUp'}>Sign up</Link></li>
                             </>
                     }
                 </ul>
