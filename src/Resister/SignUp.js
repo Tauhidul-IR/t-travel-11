@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 import googlelogo from '../image/google.png'
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password)
+
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                alert('SignUp Successfully..')
+                form.reset();
+            })
+            .catch(eror => console.error(eror))
+    }
+
+
+
+
+
     return (
         <div className='container'>
             <div className="hero w-full my-20">
 
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-10">
                     <h1 className="text-5xl font-bold text-center">SignUp</h1>
-                    <form className="card-body">
+                    <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Your Name</span>
