@@ -14,7 +14,7 @@ const HomeSingleService = ({ service }) => {
                     <p className='text-xl'>{`${info}...`}</p>
                     <h2 className='text-lg font-bold'>Price : {price}</h2>
                     <div className="card-actions justify-center">
-                        <Link to={`/serviceDetails/${_id}`}><button className="btn btn-error">Details</button></Link>
+                        <Link to={`/serviceDetails/${_id}`}><button className="btn btn-error text-xl font-bold">Details</button></Link>
                     </div>
                 </div>
             </div>

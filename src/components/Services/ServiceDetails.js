@@ -28,7 +28,7 @@ const ServiceDetails = () => {
                     <p className='text-xl'>{details}</p>
                     <div className="card-actions justify-center">
                         <h1 className='text-5xl'>If You Travel this place. please book me. I will give You the best service</h1>
-                        <Link to={`#`}><button className="btn btn-error">Book Me</button></Link>
+                        <Link to={`#`}><button className="btn btn-error text-xl font-bold">Book Me</button></Link>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@ const ServiceDetails = () => {
                     {
                         user?.email ? <Link to={`/review/${_id}`}><button className="btn btn-error">Add Review</button></Link> :
                             <>
-                                <h2>Please Login first to add review <Link to={`/login`}><button className="btn btn-error">login</button></Link> </h2>
+                                <h2 className='text-2xl'>Please Login first to add review <Link to={`/login`}><button className="btn btn-error">login</button></Link> </h2>
                             </>
                     }
                 </div>
