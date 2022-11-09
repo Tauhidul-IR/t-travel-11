@@ -15,6 +15,7 @@ const Review = () => {
         const name = form.name.value;
         const phone = form.phone.value;
         const message = form.message.value;
+        const photoURL = form.photoUrl.value;
         const email = user?.email || "Unregistered";
 
         const review = {
@@ -23,7 +24,8 @@ const Review = () => {
             client: name,
             email,
             phone,
-            message
+            message,
+            photoURL
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -55,6 +57,7 @@ const Review = () => {
                 <form onSubmit={handleSubmitReview}>
                     <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>
                         <input type="text" name='name' placeholder="Full Name" className="input input-bordered    w-full " />
+                        <input type="text" name='photoUrl' placeholder="PhotoURL" defaultValue={user?.photoURL} className="input input-bordered    w-full " />
                         <input type="text" name='phone' placeholder="Your Phone" className="input input-bordered   w-full " required />
                         <input type="email" name='email' placeholder="Your Email" defaultValue={user?.email} className="input input-bordered    w-full " readOnly />
                     </div>
