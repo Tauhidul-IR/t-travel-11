@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 import googlelogo from '../image/google.png'
 
 const SignUp = () => {
     const { createUser, googleSignIn } = useContext(AuthContext)
+    useTitle('signUp')
 
     const handleSubmit = event => {
         event.preventDefault();

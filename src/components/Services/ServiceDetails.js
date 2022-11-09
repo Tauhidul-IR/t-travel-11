@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import AllReview from './AllReview';
 
 const ServiceDetails = () => {
@@ -9,6 +10,7 @@ const ServiceDetails = () => {
     const service = useLoaderData()
     // console.log(service)
     const { _id, image_url, title, details, price } = service;
+    useTitle('serviceDetails')
 
 
     useEffect(() => {
