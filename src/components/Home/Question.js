@@ -22,6 +22,7 @@ const Question = () => {
 
                     </div>
                 </div>
+                {/* ------------------ */}
                 <div>
                     <div className="footer p-10  text-black justify-around">
                         <div>

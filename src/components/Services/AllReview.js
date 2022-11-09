@@ -20,7 +20,7 @@ const AllReview = ({ review }) => {
 
                         <h2 className='text-2xl font-bold'>Reviewer: {client}</h2>
                         <h3 className='text-xg font-bold'>Reviewer Email : {email}</h3>
-                        <p className='text-lg'><spna className='font-bold'>Review :</spna>{message}</p>
+                        <p className='text-lg'><span className='font-bold'>Review :</span>{message}</p>
                     </div>
 
                 </div>

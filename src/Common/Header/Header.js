@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
@@ -26,13 +26,12 @@ const Header = () => {
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/allServices'}>Services</Link></li>
                         <li><Link to={'/blogs'}>Blogs</Link></li>
-                        <li><Link to={'/singleService'}>single</Link></li>
 
                         {
                             user?.email ? <>
-                                <li><Link to={''}>My reviews</Link></li>
+                                <li><Link to={'/myReviews'}>My reviews</Link></li>
                                 <li><Link to={''}>Add service</Link></li>
-                                <li><Link onClick={handlelogout}>Logout</Link></li>
+                                <li><Link to={'/'} onClick={handlelogout}>Logout</Link></li>
                             </> :
                                 <>
                                     <li><Link to={'/login'}>Login</Link></li>
