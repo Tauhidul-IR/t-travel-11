@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Blogs from '../../components/Blogs/Blogs';
 import Home from '../../components/Home/Home';
+import MyReviews from '../../components/MyReviews/MyReviews';
 import Review from '../../components/Review/Review';
 import ServiceDetails from '../../components/Services/ServiceDetails';
 import Services from '../../components/Services/Services';
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
                 path: '/review/:id',
                 element: <Review></Review>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/myReviews',
+                element: <MyReviews></MyReviews>
+                // loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             }
         ]
     }

@@ -7,6 +7,8 @@ const Review = () => {
     const review = useLoaderData()
     console.log(review)
     const { _id, image_url, title, details, price } = review;
+
+
     const handleSubmitReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,6 +16,32 @@ const Review = () => {
         const phone = form.phone.value;
         const message = form.message.value;
         const email = user?.email || "Unregistered";
+
+        const review = {
+            service: _id,
+            serviceName: title,
+            client: name,
+            email,
+            phone,
+            message
+        }
+
+        fetch('http://localhost:5000/reviews', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Review Submitted successfully');
+                    form.reset();
+                }
+            })
+            .catch(error => console.error(error))
 
     }
     return (

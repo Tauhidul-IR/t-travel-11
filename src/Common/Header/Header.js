@@ -51,7 +51,7 @@ const Header = () => {
                     <li><Link to={'/singleService'}>single</Link></li>
                     {
                         user?.email ? <>
-                            <li><Link to={''}>My reviews</Link></li>
+                            <li><Link to={'/myReviews'}>My reviews</Link></li>
                             <li><Link to={''}>Add service</Link></li>
                             <li><Link onClick={handlelogout}>Logout</Link></li>
                         </> :
