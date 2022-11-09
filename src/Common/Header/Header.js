@@ -48,7 +48,6 @@ const Header = () => {
                     <li><Link to={'/'}>Home</Link></li>
                     <li><Link to={'/allServices'}>Services</Link></li>
                     <li><Link to={'/blogs'}>Blogs</Link></li>
-                    <li><Link to={'/singleService'}>single</Link></li>
                     {
                         user?.email ? <>
                             <li><Link to={'/myReviews'}>My reviews</Link></li>

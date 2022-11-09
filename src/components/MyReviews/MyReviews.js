@@ -17,9 +17,10 @@ const MyReviews = () => {
         <div>
             <div>
                 {
-                    reviews.length === 0 ? <> <h1>Not Review</h1></>
+                    reviews.length === 0 ? <> <h1 className='text-3xl font-bold mt-7'>No Review</h1></>
                         : <>
-                            <h2>total review {reviews.length}</h2>
+                            <h2 className='text-3xl font-bold mt-7'>Total review {reviews.length}</h2>
+                            <div className="divider"></div>
                             <div className='grid grid-col-1 justify-center mb-10'>
                                 {
                                     reviews.map(review => <MySingleReview
