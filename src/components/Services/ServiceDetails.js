@@ -38,10 +38,16 @@ const ServiceDetails = () => {
                 <h1 className='text-5xl'>Clients Review</h1>
                 <div className='grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-6 mb-10'>
                     {
-                        reviews.map(review => <AllReview
-                            key={review._id}
-                            review={review}
-                        ></AllReview>)
+                        reviews.length === 0 ?
+                            <> <h2 className='text-5xl text-center font-bold my-10'>No Review</h2></>
+                            : <>
+                                {
+                                    reviews.map(review => <AllReview
+                                        key={review._id}
+                                        review={review}
+                                    ></AllReview>)
+                                }
+                            </>
                     }
                 </div>
                 {/* ------------- */}
