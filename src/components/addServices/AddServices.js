@@ -51,7 +51,7 @@ const AddServices = () => {
                 <h2 className='text-4xl'>{ }</h2>
             </div>
 
-            <div className='bg-slate-200 p-5 my-2'>
+            <div className='bg-slate-200 p-5 my-2 sm:w-1/2 mx-auto'>
                 <form onSubmit={handleSubmitService}>
                     <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>
                         <input type="text" name='title' placeholder="Title" className="input input-bordered    w-full " required />

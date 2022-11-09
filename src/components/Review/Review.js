@@ -53,11 +53,11 @@ const Review = () => {
                 <h2 className='text-4xl'>{title}</h2>
             </div>
 
-            <div className='bg-slate-200 p-5 my-2'>
+            <div className='bg-slate-200 p-5 my-2 sm:w-1/2 mx-auto'>
                 <form onSubmit={handleSubmitReview}>
                     <div className='grid grid-cols-1 lg:grid-cols-1 gap-4'>
                         <input type="text" name='name' placeholder="Full Name" className="input input-bordered    w-full " />
-                        <input type="text" name='photoUrl' placeholder="PhotoURL" defaultValue={user?.photoURL} className="input input-bordered    w-full " />
+                        <input type="text" name='photoUrl' placeholder="Your PhotoURL" defaultValue={user?.photoURL} className="input input-bordered    w-full " />
                         <input type="text" name='phone' placeholder="Your Phone" className="input input-bordered   w-full " required />
                         <input type="email" name='email' placeholder="Your Email" defaultValue={user?.email} className="input input-bordered    w-full " readOnly />
                     </div>
