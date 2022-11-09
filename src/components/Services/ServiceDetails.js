@@ -22,6 +22,10 @@ const ServiceDetails = () => {
 
             {/* ---------------------- */}
             <div>
+                <h1 className='text-5xl'>Clients Review</h1>
+                <div>
+                    <Link to={`/review/${_id}`}><button className="btn btn-error">Review</button></Link>
+                </div>
 
             </div>
         </div>
