@@ -32,7 +32,7 @@ const Login = () => {
 
     const handleGoogle = () => {
         googleSignIn()
-            .then(() => { })
+            .then(() => { navigate(from, { replace: true }) })
             .catch(error => console.error(error))
     }
 

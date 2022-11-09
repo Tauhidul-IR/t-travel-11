@@ -52,7 +52,7 @@ const Header = () => {
                         user?.email ? <>
                             <li><Link to={'/myReviews'}>My reviews</Link></li>
                             <li><Link to={''}>Add service</Link></li>
-                            <li><Link onClick={handlelogout}>Logout</Link></li>
+                            <li><Link to={'/'} onClick={handlelogout}>Logout</Link></li>
                         </> :
                             <>
                                 <li><Link to={'/login'}>Login</Link></li>
