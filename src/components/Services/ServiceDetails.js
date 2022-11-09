@@ -12,10 +12,10 @@ const ServiceDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`http://localhost:5000/reviewsServiceName?serviceName=${service?.title}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [service?.title])
     console.log(reviews)
 
     return (
