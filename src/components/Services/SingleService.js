@@ -1,4 +1,6 @@
 import React from 'react';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
@@ -8,7 +10,12 @@ const SingleService = ({ service }) => {
     return (
         <div>
             <div className="card card-compact w-full bg-base-100 shadow-xl">
-                <figure><img className='rounded h-60' src={image_url} alt="Shoes" /></figure>
+                <PhotoProvider>
+                    <PhotoView src={image_url}>
+                        <figure><img className='rounded h-60' src={image_url} alt="Shoes" /></figure>
+                    </PhotoView>
+                </PhotoProvider>
+
                 <div className="card-body mx-10">
                     <h2 className="card-title text-4xl">{title}</h2>
                     <p className='text-xl'>{`${info}...`}</p>
