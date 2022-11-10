@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import MySingleReview from './MySingleReview';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([])
@@ -43,7 +44,7 @@ const MyReviews = () => {
                 .then(data => {
                     console.log(data)
                     if (data.deletedCount > 0) {
-                        alert('Deleted Successfully.');
+                        toast.success('Deleted Successfully.')
                         const remaining = reviews.filter(rev => rev._id !== id);
                         setReviews(remaining)
                     }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 import googlelogo from '../image/google.png'
-
+import toast, { Toaster } from 'react-hot-toast';
 const SignUp = () => {
     const { createUser, googleSignIn } = useContext(AuthContext)
     useTitle('signUp')
@@ -21,7 +21,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                alert('SignUp Successfully..')
+                toast.success('SignUp Successfully..');
                 form.reset();
             })
             .catch(eror => console.error(eror))

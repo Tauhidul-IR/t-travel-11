@@ -1,5 +1,7 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const AddServices = () => {
 
@@ -35,7 +37,7 @@ const AddServices = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Service Added successfully');
+                    toast.success('Service Added successfully')
                     form.reset();
                 }
             })

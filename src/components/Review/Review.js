@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Review = () => {
     const { user } = useContext(AuthContext);
@@ -41,7 +42,7 @@ const Review = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review Submitted successfully');
+                    toast.success('Review Submitted successfully');
                     form.reset();
                 }
             })

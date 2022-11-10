@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 import googleLogo from '../image/google.png'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const { loginUser, googleSignIn } = useContext(AuthContext)
@@ -24,7 +25,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                alert('login successSully')
+                toast.success('login successSully')
                 form.reset();
 
                 const currentUser = {
