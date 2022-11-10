@@ -38,7 +38,12 @@ const SignUp = () => {
 
     const handleGoogle = () => {
         googleSignIn()
-            .then(() => { navigate(from, { replace: true }) })
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from, { replace: true })
+                toast.success("login Successfully")
+            })
             .catch(error => console.error(error))
     }
 
