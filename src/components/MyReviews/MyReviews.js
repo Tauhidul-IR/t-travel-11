@@ -5,16 +5,30 @@ import MySingleReview from './MySingleReview';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([])
-    const { user } = useContext(AuthContext);
+    const { user, logOutUser } = useContext(AuthContext);
     useTitle('myReviews')
 
     console.log(reviews)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email])
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('t-travel-token')}`
+            }
+        })
+            // .then(res => res.json())
+            // .then(data => setReviews(data))
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOutUser();
+                }
+
+                return res.json()
+            })
+            .then(data => {
+                setReviews(data)
+            })
+    }, [user?.email, logOutUser])
 
 
 

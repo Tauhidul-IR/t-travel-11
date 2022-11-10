@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOutUser = () => {
+        localStorage.removeItem('t-travel-token')
         return signOut(auth)
     }
 
