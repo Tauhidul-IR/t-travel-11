@@ -6,12 +6,16 @@ import googleLogo from '../image/google.png'
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-    const { loginUser, googleSignIn } = useContext(AuthContext)
+    const { loginUser, googleSignIn, loading } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
     useTitle('login')
+
+    if (loading) {
+        return <button className="btn loading">loading</button>
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
