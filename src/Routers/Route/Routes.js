@@ -43,12 +43,12 @@ const router = createBrowserRouter([
             {
                 path: '/serviceDetails/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://t-travel-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/review/:id',
                 element: <PrivateRoutes><Review></Review></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://t-travel-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myReviews',
