@@ -1,4 +1,15 @@
 # Getting Started with Create React App
+#####
+site Link-https://t-travel-9b753.web.app/
+information of website----
+* This is a simple T-Travel (travel related) site.
+* In the site any one can book a tourist guide.
+* In the site we Use React app , cors, express.
+* For authentication and deployment use firebase
+* Database is MongoDB
+* I use daisyUI as a component library.
+* And many other thing i use like--hot-toast, package react-photo-view.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
