@@ -49,6 +49,8 @@ const Review = () => {
             .catch(error => console.error(error))
 
     }
+
+
     return (
         <div>
             <div className='text-center font-bold'>
@@ -65,7 +67,7 @@ const Review = () => {
                         <input type="email" name='email' placeholder="Your Email" defaultValue={user?.email} className="input input-bordered    w-full " readOnly />
                     </div>
                     <textarea name='message' className="textarea w-full my-4 h-60" placeholder="Your Message"></textarea>
-                    <input className="btn btn-error w-full" type="submit" value="Submit Your Review" />
+                    <input className="btn btn-error w-full  font-bold" type="submit" value="Submit Review" />
                 </form>
 
             </div>

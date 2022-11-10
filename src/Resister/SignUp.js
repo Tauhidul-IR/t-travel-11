@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 import googlelogo from '../image/google.png'
@@ -7,6 +7,10 @@ import toast, { Toaster } from 'react-hot-toast';
 const SignUp = () => {
     const { createUser, googleSignIn } = useContext(AuthContext)
     useTitle('signUp')
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,13 +27,14 @@ const SignUp = () => {
                 console.log(user)
                 toast.success('SignUp Successfully..');
                 form.reset();
+                navigate(from, { replace: true })
             })
             .catch(eror => console.error(eror))
     }
 
     const handleGoogle = () => {
         googleSignIn()
-            .then(() => { })
+            .then(() => { navigate(from, { replace: true }) })
             .catch(error => console.error(error))
     }
 

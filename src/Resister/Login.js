@@ -9,9 +9,9 @@ const Login = () => {
     const { loginUser, googleSignIn } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
-    useTitle('login')
 
     const from = location.state?.from?.pathname || '/';
+    useTitle('login')
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('login successSully')
-                form.reset();
+                // form.reset();
 
                 const currentUser = {
                     email: user?.email
@@ -45,7 +45,6 @@ const Login = () => {
                         localStorage.setItem('t-travel-token', data.token)
                         navigate(from, { replace: true })
                     })
-                // navigate(from, { replace: true })
             })
 
 
@@ -55,7 +54,6 @@ const Login = () => {
         googleSignIn()
             .then(() => { navigate(from, { replace: true }) })
             .catch(error => console.error(error))
-        navigate(from, { replace: true })
     }
 
 
@@ -89,12 +87,7 @@ const Login = () => {
                     <div className='text-center'>
                         <h2 className='pb-4 text-xl'>Login with</h2>
                         <div className='flex justify-around py-4'>
-                            {/* <Link className='text-3xl'><FaGoogle></FaGoogle></Link>
-                            <Link className='text-3xl'><FaGithub></FaGithub></Link>
-                            <Link className='text-3xl'><FaFacebook></FaFacebook></Link> */}
                             <Link ><img onClick={handleGoogle} className='w-8 h-8' src={googleLogo} alt="" /></Link>
-
-
                         </div>
                     </div>
                     <p className='text-center'>New to Genius Car <Link className='text-orange-500 font-bold' to={'/signup'}>Sign Up</Link></p>

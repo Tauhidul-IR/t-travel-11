@@ -11,21 +11,22 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
 
+    //Create user
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
-
+    //Login User
     const loginUser = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
-
+    //LogOut User
     const logOutUser = () => {
         localStorage.removeItem('t-travel-token')
         return signOut(auth)
     }
-
+    //google signIn
     const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const AllReview = ({ review }) => {
-    // const { user } = useContext(AuthContext)
     const { _id, serviceName, client, email, message, service } = review;
     console.log(review)
     return (
@@ -14,8 +13,12 @@ const AllReview = ({ review }) => {
                         <h1 className='text-2xl font-bold'>{serviceName}</h1>
 
                         {
-                            review?.photoURL ? <figure><img className='w-16 h-16 rounded my-7' src={review?.photoURL
-                            } alt="user" /></figure> : <><figure><img className='w-16 h-16 rounded my-7' src='' alt="No img" /></figure> </>
+                            review?.photoURL ?
+                                <figure><img className='w-16 h-16 rounded my-7' src={review?.photoURL
+                                } alt="user" /></figure> :
+                                <>
+                                    <figure><img className='w-16 h-16 rounded my-7' src='' alt="No img" /></figure>
+                                </>
                         }
 
                         <h2 className='text-2xl font-bold'>Reviewer: {client}</h2>

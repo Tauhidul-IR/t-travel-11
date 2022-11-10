@@ -51,7 +51,6 @@ const AddServices = () => {
         <div>
             <div className='text-center font-bold my-10'>
                 <h2 className='text-2xl'>Add Service.</h2>
-                <h2 className='text-4xl'>{ }</h2>
             </div>
 
             <div className='bg-slate-200 p-5 my-2 sm:w-1/2 mx-auto'>

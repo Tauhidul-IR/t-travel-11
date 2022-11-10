@@ -10,7 +10,6 @@ const HomeService = () => {
             .then(data => setServices(data))
     }, [])
 
-    // console.log(services)
 
     return (
         <div>

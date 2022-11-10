@@ -8,10 +8,6 @@ const MySingleReview = ({ review, handleDelete }) => {
     console.log(serviceName, client, email)
 
 
-
-
-
-
     return (
         <div>
             <div className="card sm:w-auto bg-base-100 shadow-xl my-6">
@@ -26,7 +22,6 @@ const MySingleReview = ({ review, handleDelete }) => {
                         {/* update btn  */}
                         <button className="btn btn-error">Update</button>
                         {/* delete btn  */}
-
                         <button onClick={() => handleDelete(_id)} className="btn btn-error">X</button>
 
                     </div>

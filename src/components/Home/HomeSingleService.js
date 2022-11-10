@@ -4,9 +4,12 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const HomeSingleService = ({ service }) => {
+
     console.log(service)
     const { _id, image_url, title, details, price } = service;
     const info = details.slice(0, 100);
+
+
     return (
         <div>
             <div className="card card-compact w-full bg-base-100 shadow-xl">

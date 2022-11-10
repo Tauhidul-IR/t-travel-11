@@ -9,7 +9,6 @@ const MyReviews = () => {
     const { user, logOutUser } = useContext(AuthContext);
     useTitle('myReviews')
 
-    console.log(reviews)
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
@@ -17,8 +16,6 @@ const MyReviews = () => {
                 authorization: `Bearer ${localStorage.getItem('t-travel-token')}`
             }
         })
-            // .then(res => res.json())
-            // .then(data => setReviews(data))
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     return logOutUser();

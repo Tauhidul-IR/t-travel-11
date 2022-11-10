@@ -4,7 +4,7 @@ const Question = () => {
     return (
         <div>
             <div className='my-10'>
-                <h1 className='text-center text-5xl font-bold'>Ask Your Questions</h1>
+                <h1 className='text-center text-5xl font-bold'>Questions.??</h1>
                 <div>
                     <div className="footer p-10  text-black justify-around">
                         <div>
@@ -22,6 +22,7 @@ const Question = () => {
 
                     </div>
                 </div>
+                <div className="divider"></div>
                 {/* ------------------ */}
                 <div>
                     <div className="footer p-10  text-black justify-around">
