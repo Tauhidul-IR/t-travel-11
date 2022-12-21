@@ -8,7 +8,7 @@ import Question from './Question';
 const Home = () => {
     useTitle('home')
     return (
-        <div>
+        <div className='px-4'>
             <Banner></Banner>
             <HomeService></HomeService>
             <Gallary></Gallary>

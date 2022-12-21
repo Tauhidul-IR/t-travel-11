@@ -61,15 +61,15 @@ const Question = () => {
                 <form onSubmit={handlesendEmail}>
                     <div className="footer p-10  text-black justify-around">
                         <div>
-                            <input type="text" name="name" placeholder="Name" className="input  input-bordered input-error w-full max-w-xs" />
+                            <input type="text" name="name" placeholder="Name" required className="input  input-bordered input-error w-full max-w-xs" />
                         </div>
                         <div>
-                            <input type="text" placeholder="Email" name='email' className="input input-bordered input-error w-full max-w-xs" />
+                            <input type="text" placeholder="Email" name='email' required className="input input-bordered input-error w-full max-w-xs" />
                         </div>
                         <div>
                             <input type="text" placeholder="Subject" className="input input-bordered input-error w-full max-w-xs" />
                         </div>
-                        <textarea className="textarea w-full textarea-error" name='message' placeholder="Your Message"></textarea>
+                        <textarea className="textarea w-full textarea-error" name='message' required placeholder="Your Message"></textarea>
                     </div>
                     {/* <input type="submit" className="btn btn-outline text-xl font-bold btn-error mb-6">Send Message</input> */}
                     <input className='btn btn-outline text-xl font-bold btn-error mb-6' type="submit" value="Send message" />
