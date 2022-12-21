@@ -18,11 +18,11 @@ const MySingleReview = ({ review, handleDelete }) => {
                         <h2 className='text-xl font-bold'>Reviewer: {client}</h2>
                         <p className='text-lg'><span className='font-bold'>Review : </span>{message}</p>
                     </div>
-                    <div className="card-actions flex flex-col items-center justify-center">
+                    <div className="card-actions  flex flex-row items-center justify-center pt-5">
                         {/* update btn  */}
-                        <button className="btn btn-error">Update</button>
+                        <button className="btn btn-error btn-sm">Update</button>
                         {/* delete btn  */}
-                        <button onClick={() => handleDelete(_id)} className="btn btn-error">X</button>
+                        <button onClick={() => handleDelete(_id)} className="btn btn-error btn-sm">Delete</button>
 
                     </div>
                 </div>

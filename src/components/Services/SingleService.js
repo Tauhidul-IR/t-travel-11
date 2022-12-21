@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SingleService = ({ service }) => {
     console.log(service)
     const { _id, image_url, title, details, price } = service;
-    const info = details.slice(0, 100);
+    const info = details.slice(0, 120);
 
 
     return (
@@ -20,7 +20,7 @@ const SingleService = ({ service }) => {
 
                 <div className="card-body mx-10">
                     <h2 className="card-title text-4xl">{title}</h2>
-                    <p className='text-xl'>{`${info}...`}</p>
+                    <p className='text-xl  text-left'>{`${info}...`}</p>
                     <h2 className='text-lg font-bold'>Price : {price}</h2>
                     <div className="card-actions justify-center">
                         <Link to={`/serviceDetails/${_id}`}><button className="btn btn-error text-xl font-bold">Details</button></Link>

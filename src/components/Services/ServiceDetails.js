@@ -28,7 +28,7 @@ const ServiceDetails = () => {
                     <h2 className="font-bold text-4xl text-center">{title}</h2>
                     <h2 className='text-lg text-orange-400 font-extrabold'>Price : tk.{price}</h2>
                     <p className='text-xl'>{details}</p>
-                    <div className="card-actions justify-center">
+                    <div className="card-actions justify-left">
                         <h1 className='text-2xl font-bold text-green-600'>If You Travel this place. please book me. I will give You the best service</h1>
                         <Link to={`#`}><button className="btn btn-error text-xl font-bold">Book Me</button></Link>
                     </div>

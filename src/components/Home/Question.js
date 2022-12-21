@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from "emailjs-com"
+
+const Result = () => {
+    return (
+        <p className='text-green-600'>Your message has been successfully sent.</p>
+    )
+}
 
 const Question = () => {
+    const [result, setResult] = useState(false)
+
+    const handlesendEmail = event => {
+        event.preventDefault()
+        const form = event.target;
+        console.log(form.email.value);
+
+        emailjs.sendForm('service_scgvy7j', 'template_sxfe9m7', event.target, '8SiKyRNnNeddMkP4l')
+            .then(res => {
+                console.log(res);
+                setResult(true)
+
+            })
+            .catch(error => {
+                console.log(error)
+
+            })
+        form.reset()
+
+    }
+
+    setTimeout(() => {
+        setResult(false)
+    }, 5000)
+
+
+
     return (
         <div>
             <div className='my-10'>
@@ -24,21 +58,25 @@ const Question = () => {
                 </div>
                 <div className="divider"></div>
                 {/* ------------------ */}
-                <div>
+                <form onSubmit={handlesendEmail}>
                     <div className="footer p-10  text-black justify-around">
                         <div>
-                            <input type="text" placeholder="Name" className="input  input-bordered input-error w-full max-w-xs" />
+                            <input type="text" name="name" placeholder="Name" className="input  input-bordered input-error w-full max-w-xs" />
                         </div>
                         <div>
-                            <input type="text" placeholder="Email" className="input input-bordered input-error w-full max-w-xs" />
+                            <input type="text" placeholder="Email" name='email' className="input input-bordered input-error w-full max-w-xs" />
                         </div>
                         <div>
                             <input type="text" placeholder="Subject" className="input input-bordered input-error w-full max-w-xs" />
                         </div>
-                        <textarea className="textarea w-full textarea-error" placeholder="Your Message"></textarea>
+                        <textarea className="textarea w-full textarea-error" name='message' placeholder="Your Message"></textarea>
                     </div>
-                    <button className="btn btn-outline text-xl font-bold btn-error mb-6">Send Message</button>
-                </div>
+                    {/* <input type="submit" className="btn btn-outline text-xl font-bold btn-error mb-6">Send Message</input> */}
+                    <input className='btn btn-outline text-xl font-bold btn-error mb-6' type="submit" value="Send message" />
+                    {
+                        result ? <Result /> : null
+                    }
+                </form>
 
             </div>
         </div>

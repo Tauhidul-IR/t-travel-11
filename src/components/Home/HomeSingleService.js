@@ -7,7 +7,7 @@ const HomeSingleService = ({ service }) => {
 
     console.log(service)
     const { _id, image_url, title, details, price } = service;
-    const info = details.slice(0, 100);
+    const info = details.slice(0, 120);
 
 
     return (
